@@ -1,0 +1,11 @@
+---
+- hosts: all
+  tasks:
+  - name: Run the new module
+    epoch-converter:
+      epoch_timestamp: '1657382363'
+      state_changed: yes
+    register: show_output
+  - name: Show Output
+    debug:
+      msg: '{{ show_output }}'
